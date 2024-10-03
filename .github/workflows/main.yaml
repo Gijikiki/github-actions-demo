@@ -1,4 +1,4 @@
-name: CI
+name: Run hello_time script
 
 on:
   push:
@@ -6,12 +6,19 @@ on:
       - main
 
 jobs:
-  build:
+  run-python-script:
     runs-on: ubuntu-latest
 
     steps:
       - name: Retrieve code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Say hello to the world
-        run: echo "Hello, World!"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run hello_with_timestamp.py
+        run: |
+          chmod +x hello_with_timestamp.py
+          ./hello_with_timestamp.py
