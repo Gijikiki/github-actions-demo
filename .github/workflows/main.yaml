@@ -21,4 +21,5 @@ jobs:
       - name: Run hello_with_timestamp.py
         run: |
           chmod +x hello_with_timestamp.py
-          ./hello_with_timestamp.py
+          output=$(./hello_with_timestamp.py)
+          echo "Script output: $output"
