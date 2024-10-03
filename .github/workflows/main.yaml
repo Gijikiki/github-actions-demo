@@ -24,7 +24,7 @@ jobs:
           ./hello_with_timestamp.py > hello_timestamp_output.txt
 
       - name: Upload the output
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hello_timestamp_output
           path: hello_timestamp_output.txt
